@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/api/products', require('./routes/productRoutes'));
 
 app.get('/api/health', (req, res) => {
   const dbConnected = mongoose.connection.readyState === 1;
