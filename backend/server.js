@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));
 
 app.get('/api/health', (req, res) => {
   const dbConnected = mongoose.connection.readyState === 1;
